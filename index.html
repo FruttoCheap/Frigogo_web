@@ -4,84 +4,216 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Frigogo - Digitize Your Fridge</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="./css/style.css">
   <!-- Tailwind CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+  <link href="./css/output.css" rel="stylesheet">
 </head>
 <body class="bg-black font-sans text-white">
 
-<!-- Header -->
-<header class="flex justify-between items-center p-5">
-</header>
-
 <!-- Main Section -->
-<main class="flex flex-col items-center">
-  <img src="./img/logo2.png" alt="Logo" style="scale: 0.6">
-
-  <div class="carousel">
-    <div class="carousel-rotation-direction">
-      <ul class="carousel-item-wrapper" style="--_num-elements: 7">
-        <li class="carousel-item" style="--_index: 1; --_image-url: url('./img/screenshots/1.png')"><a style="background-image: url('./img/screenshots/1.png')">Screenshot 1</a></li>
-        <li class="carousel-item" style="--_index: 2; --_image-url: url('./img/screenshots/2.png')"><a style="background-image: url('./img/screenshots/2.png')">Screenshot 2</a></li>
-        <li class="carousel-item" style="--_index: 3; --_image-url: url('./img/screenshots/3.png')"><a style="background-image: url('./img/screenshots/3.png')">Screenshot 3</a></li>
-        <li class="carousel-item" style="--_index: 4; --_image-url: url('./img/screenshots/4.png')"><a style="background-image: url('./img/screenshots/4.png')">Screenshot 4</a></li>
-        <li class="carousel-item" style="--_index: 5; --_image-url: url('./img/screenshots/5.png')"><a style="background-image: url('./img/screenshots/5.png')">Screenshot 5</a></li>
-        <li class="carousel-item" style="--_index: 6; --_image-url: url('./img/screenshots/6.png')"><a style="background-image: url('./img/screenshots/6.png')">Screenshot 6</a></li>
-        <li class="carousel-item" style="--_index: 7; --_image-url: url('./img/screenshots/7.png')"><a style="background-image: url('./img/screenshots/7.png')">Screenshot 7</a></li>
-
-      </ul>
-    </div>
+<main class="scroll-smooth">
+  <div class="hero-section">
+    <img src="./img/hero.png" alt="Hero">
   </div>
 
-  <div class="py-24 sm:py-32">
-    <div class="mx-auto max-w-7xl px-6 lg:px-8">
-      <div class="mx-auto max-w-2xl lg:text-center">
-        <p class="mt-2 text-pretty text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-balance">Experience a brand new way to track and utilize your groceries</p>
-        <p class="mt-6 text-lg/8 text-white-800">Use the camera of your phone to scan the products you buy in order to convert them into a digital representation in the app.</p>
+  <div class="feature-section pt-2">
+    <div class="flex flex-row justify-center w-full h-44">
+      <div id="left-card" class="interactive-card flex items-center justify-center m-5 z-0">
+        <div class="interactive-card-content flex flex-col align-center justify-center items-center p-12">
+          <span class="text-5xl text-black font-bold">13.000+</span>
+          <span class="text-md text-black">Ingredients to use</span>
+        </div>
       </div>
-      <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
-        <dl class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
-          <div class="relative pl-16">
-            <dt class="text-base/7 font-semibold text-white">
-              <div class="absolute left-0 top-5 flex h-10 w-10 items-center justify-center">
-                <span class="text-4xl">🔔</span>
-              </div>
-              Notifications
-            </dt>
-            <dd class="mt-2 text-base/7 text-white">Get notified when a product is near the expiration date.</dd>
-          </div>
-          <div class="relative pl-16">
-            <dt class="text-base/7 font-semibold text-white">
-              <div class="absolute left-0 top-5 flex h-10 w-10 items-center justify-center rounded-lg">
-                <span class="text-4xl">📦</span>
-              </div>
-              Restock
-            </dt>
-            <dd class="mt-2 text-base/7 text-white">Restock the fridge and get delivered the food you need directly through the app.</dd>
-          </div>
-          <div class="relative pl-16">
-            <dt class="text-base/7 font-semibold text-white">
-              <div class="absolute left-0 top-5 flex h-10 w-10 items-center justify-center rounded-lg">
-                <span class="text-4xl">🤖</span>
-              </div>
-              Digital Advisor
-            </dt>
-            <dd class="mt-2 text-base/7 text-white">Ask the AI to guide you through all the recipes you can prepare using your groceries.</dd>
-          </div>
-          <div class="relative pl-16">
-            <dt class="text-base/7 font-semibold text-white">
-              <div class="absolute left-0 top-5 flex h-10 w-10 items-center justify-center rounded-lg">
-                <span class="text-4xl">🔍</span>
-              </div>
-              Explore
-            </dt>
-            <dd class="mt-2 text-base/7 text-white">Explore an infinite amount of recipes and add your preferences to get recommended your favorite dishes.</dd>
-          </div>
-        </dl>
+      <div id="middle-card" class="interactive-card flex items-center justify-center z-10" style="box-shadow: 0 5px 20px 5px rgba(0, 0, 0, 0.4); height: 22%">
+        <div class="interactive-card-content flex flex-col align-center justify-center items-center p-12">
+          <span class="text-5xl text-black font-bold">40.000+</span>
+          <span class="text-md text-black">Recipes to choose from</span>
+        </div>
+      </div>
+      <div id="right-card" class="interactive-card flex items-center justify-center m-5 z-0">
+        <div class="interactive-card-content flex flex-col align-center justify-center items-center p-12">
+          <span class="text-5xl text-black font-bold">1000+</span>
+          <span class="text-md text-black">Hours of AI training</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="pt-24 sm:pt-32">
+      <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <div class="mx-auto max-w-2xl lg:text-center">
+          <p class="mt-2 text-pretty text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-balance">Experience a brand new way to track and utilize your groceries</p>
+          <p class="mt-6 text-lg/8 text-white-800">Use the camera of your phone to scan the products you buy in order to convert them into a digital representation in the app.</p>
+        </div>
+        <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
+          <dl class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
+            <div class="relative pl-16">
+              <dt class="text-base/7 font-semibold text-white">
+                <div class="absolute left-0 top-5 flex h-10 w-10 items-center justify-center">
+                  <span class="text-4xl">🔔</span>
+                </div>
+                Notifications
+              </dt>
+              <dd class="mt-2 text-base/7 text-white">Get notified when a product is near the expiration date.</dd>
+            </div>
+            <div class="relative pl-16">
+              <dt class="text-base/7 font-semibold text-white">
+                <div class="absolute left-0 top-5 flex h-10 w-10 items-center justify-center rounded-lg">
+                  <span class="text-4xl">📦</span>
+                </div>
+                Restock
+              </dt>
+              <dd class="mt-2 text-base/7 text-white">Restock the fridge and get delivered the food you need directly through the app.</dd>
+            </div>
+            <div class="relative pl-16">
+              <dt class="text-base/7 font-semibold text-white">
+                <div class="absolute left-0 top-5 flex h-10 w-10 items-center justify-center rounded-lg">
+                  <span class="text-4xl">🤖</span>
+                </div>
+                Digital Advisor
+              </dt>
+              <dd class="mt-2 text-base/7 text-white">Ask the AI to guide you through all the recipes you can prepare using your groceries.</dd>
+            </div>
+            <div class="relative pl-16">
+              <dt class="text-base/7 font-semibold text-white">
+                <div class="absolute left-0 top-5 flex h-10 w-10 items-center justify-center rounded-lg">
+                  <span class="text-4xl">🔍</span>
+                </div>
+                Explore
+              </dt>
+              <dd class="mt-2 text-base/7 text-white">Explore an infinite amount of recipes and add your preferences to get recommended your favorite dishes.</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </div>
+
+    <div class="mx-auto mb-24 max-w-7xl px-6 sm:mt-12 lg:px-8">
+      <div
+        class="relative isolate overflow-hidden bg-gray-900 px-6 pb-24 shadow-2xl rounded-2xl sm:rounded-3xl sm:px-24 xl:py-32">
+
+        <h2 class="mx-auto max-w-2xl text-center text-3xl font-bold tracking-tight text-white sm:text-4xl">Keep Updated
+        </h2>
+
+        <p class="mx-auto mt-2 max-w-xl text-center text-lg leading-8 text-gray-300">
+          Keep pace with Frigogo
+          advancements! Join our mailing list for selective, noteworthy updates.
+        </p>
+
+        <form class="mx-auto mt-10 flex max-w-md gap-x-4">
+
+          <label for="email-address" class="sr-only">Email address</label>
+          <input id="email-address" name="email" type="email" autocomplete="email" required="" class="min-w-0 flex-auto rounded-md border-0 bg-white/5 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-white sm:text-sm sm:leading-6" placeholder="Enter your email">
+
+          <button type="submit" class="flex-none rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">Notify me</button>
+        </form>
+
+        <svg viewBox="0 0 1024 1024" class="absolute left-1/2 top-1/2 -z-10 h-[64rem] w-[64rem] -translate-x-1/2"
+             aria-hidden="true">
+          <circle cx="512" cy="512" r="512" fill="url(#759c1415-0410-454c-8f7c-9a820de03641)" fill-opacity="0.7">
+          </circle>
+          <defs>
+            <radialGradient id="759c1415-0410-454c-8f7c-9a820de03641" cx="0" cy="0" r="1"
+                            gradientUnits="userSpaceOnUse" gradientTransform="translate(512 512) rotate(90) scale(512)">
+              <stop stop-color="#7775D6"></stop>
+              <stop offset="1" stop-color="#7ED321" stop-opacity="0"></stop>
+            </radialGradient>
+          </defs>
+        </svg>
+
       </div>
     </div>
   </div>
 </main>
+
+<script>
+  const screenH = window.innerHeight;
+  const offset = screenH / 3;
+  const scroll = screenH / 2;
+  const features = document.querySelector('.feature-section');
+  const left = document.getElementById('left-card');
+  const middle = document.getElementById('middle-card');
+  const right = document.getElementById('right-card');
+  document.addEventListener('scroll', () => {
+    if (window.scrollY <= offset) {
+      features.style.opacity = "0"
+      features.style.marginTop = "-300px";
+    } else if (window.scrollY > offset && window.scrollY <= offset + scroll) {
+      features.style.opacity = ((window.scrollY - offset) / scroll).toString();
+      features.style.marginTop = "-" + (300 - ((window.scrollY - offset) / scroll) * 100).toString() + "px";
+    } else {
+      features.style.opacity = "1";
+      features.style.marginTop = "-200px";
+    }
+
+
+    if (window.scrollY <= offset) {
+      left.style.left = "0";
+      left.style.rotate = "-10deg";
+      right.style.right = "0";
+      right.style.rotate = "10deg";
+      middle.style.bottom = "-25%";
+    } else if (window.scrollY > offset && window.scrollY <= (offset + scroll / 2)) {
+      left.style.left = (36 * ((window.scrollY - offset) / scroll)).toString() + "%";
+      left.style.rotate = (-10 * (1 - ((window.scrollY - offset) * 2 / scroll))).toString() + "deg";
+      right.style.right = (36 * ((window.scrollY - offset) / scroll)).toString() + "%";
+      right.style.rotate = (10 * (1 - ((window.scrollY - offset) * 2 / scroll))).toString() + "deg";
+      middle.style.bottom = (-50 * (1 - ((window.scrollY - offset) / scroll))).toString() + "%";
+    } else {
+      left.style.left = "18%";
+      left.style.rotate = "0deg";
+      right.style.right = "18%";
+      right.style.rotate = "0deg";
+      middle.style.bottom = "-25%";
+    }
+  });
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const cards = document.querySelectorAll('.interactive-card');
+
+    cards.forEach(card => {
+      const cardContent = card.querySelector('.interactive-card-content');
+
+      card.addEventListener('mousemove', (event) => {
+        const rect = card.getBoundingClientRect();
+        const x = event.clientX - rect.left;
+        const y = event.clientY - rect.top;
+
+        const blue = Math.round((Math.abs(((x - (rect.width / 2)) / (rect.width / 2)) * 255) + Math.abs(((y - (rect.height / 2)) / (rect.height / 2)) * 255)) / 3) + 100;
+        const red = Math.abs(((x - (rect.width / 2)) / (rect.width / 2)) * 120);
+        const green = Math.abs(((y - (rect.height / 2)) / (rect.height / 2)) * 120);
+
+        card.style.transition = 'box-shadow 0.0s ease, scale 0.3s ease, transform 0.01s ease';
+        card.style.transform = 'perspective(1000px) rotateX(' + - (y - rect.height / 2) / 15 + 'deg) rotateY(' + (x - rect.width / 2) / 15 + 'deg) translateZ(50px)';
+        card.style.boxShadow = - (x - rect.width / 2) / 20 + 'px ' + - (y - rect.height / 2) / 20 + 'px ' + '50px 10px rgba(' + red + ', ' + green + ', ' + blue + ', 1)';
+
+        cardContent.style.transition = 'text-shadow 0.3s ease, transform 0.0s ease';
+        cardContent.style.transform = 'perspective(1000px) rotateX(' + - (y - rect.height / 2) / 20 + 'deg) rotateY(' + (x - rect.width / 2) / 20 + 'deg) translateZ(100px)';
+      });
+
+      if (card.id !== 'middle-card') {
+        card.addEventListener('mouseleave', () => {
+          card.style.transition = 'box-shadow 0.3s ease, scale 0.3s ease, transform 0.3s ease';
+          card.style.transform = 'rotateY(0deg) rotateX(0deg) translateZ(0px)';
+          card.style.boxShadow = '0px 0px 0px 0px rgba(0, 0, 0, 0.4)';
+
+          cardContent.style.transition = 'text-shadow 0.3s ease, transform 0.3s ease';
+          cardContent.style.transform = 'rotateX(0deg) rotateY(0deg) translateZ(0px)';
+        });
+      } else {
+        card.addEventListener('mouseleave', () => {
+          card.style.transition = 'box-shadow 0.3s ease, scale 0.3s ease, transform 0.3s ease';
+          card.style.transform = 'rotateY(0deg) rotateX(0deg) translateZ(0px)';
+          card.style.boxShadow = '0px 5px 20px 5px rgba(0, 0, 0, 0.4)';
+
+          cardContent.style.transition = 'text-shadow 0.3s ease, transform 0.3s ease';
+          cardContent.style.transform = 'rotateX(0deg) rotateY(0deg) translateZ(0px)';
+        });
+      }
+    });
+  });
+</script>
 </body>
 </html>
