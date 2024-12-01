@@ -12,25 +12,30 @@
 
 <!-- Main Section -->
 <main>
-  <div class="hero-section">
-    <img src="https://fruttocheap.github.io/Frigogo_web/img/hero.png" alt="Hero" style="width: 100%">
+  <div class="hero-section relative flex flex-col justify-center">
+    <img id="logo" class="absolute w-full mx-auto top-0" src="./img/logo2.png" alt="Logo">
+    <img id="screens" class="absolute" src="./img/hero.png" alt="Hero">
+  </div>
+
+  <div id="spacer">
+
   </div>
 
   <div class="feature-section pt-2">
-    <div class="flex flex-row justify-center w-full h-44">
-      <div id="left-card" class="interactive-card flex items-center justify-center m-5 z-0">
+    <div id="cards-section" class="relative justify-center w-full">
+      <div id="left-card" class="interactive-card absolute flex items-center justify-center z-0">
         <div class="interactive-card-content flex flex-col align-center justify-center items-center p-12">
           <span class="text-5xl text-black font-bold">13.000+</span>
           <span class="text-md text-black">Ingredients to use</span>
         </div>
       </div>
-      <div id="middle-card" class="interactive-card flex items-center justify-center z-10" style="box-shadow: 0 5px 20px 5px rgba(0, 0, 0, 0.4); height: 22%">
+      <div id="middle-card" class="interactive-card absolute flex items-center justify-center z-10" style="box-shadow: 0 5px 20px 5px rgba(0, 0, 0, 0.4)">
         <div class="interactive-card-content flex flex-col align-center justify-center items-center p-12">
           <span class="text-5xl text-black font-bold">40.000+</span>
           <span class="text-md text-black">Recipes to choose from</span>
         </div>
       </div>
-      <div id="right-card" class="interactive-card flex items-center justify-center m-5 z-0">
+      <div id="right-card" class="interactive-card absolute flex items-center justify-center z-0">
         <div class="interactive-card-content flex flex-col align-center justify-center items-center p-12">
           <span class="text-5xl text-black font-bold">1000+</span>
           <span class="text-md text-black">Hours of AI training</span>
@@ -38,7 +43,7 @@
       </div>
     </div>
 
-    <div class="pt-24 sm:pt-32">
+    <div id="experience" class="pt-24 sm:pt-32 h-56 mb-20">
       <div class="mx-auto max-w-7xl px-6 lg:px-8">
         <div class="mx-auto max-w-2xl lg:text-center">
           <p class="mt-2 text-pretty text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-balance">Experience a brand new way to track and utilize your groceries</p>
@@ -87,9 +92,9 @@
       </div>
     </div>
 
-    <div class="mx-auto mb-24 max-w-7xl px-6 sm:mt-12 lg:px-8">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8 h-44">
       <div
-        class="relative isolate overflow-hidden bg-gray-900 px-6 pb-24 shadow-2xl rounded-2xl sm:rounded-3xl sm:px-24 xl:py-32">
+        class="relative isolate overflow-hidden bg-gray-900 px-6 shadow-2xl rounded-2xl sm:rounded-3xl sm:px-24 py-24">
 
         <h2 class="mx-auto max-w-2xl text-center text-3xl font-bold tracking-tight text-white sm:text-4xl">Keep Updated
         </h2>
@@ -122,49 +127,157 @@
 
       </div>
     </div>
+
+    <div style="height: 20vh">
+
+    </div>
   </div>
 </main>
 
 <script>
-  const screenH = window.innerHeight;
-  const offset = screenH / 3;
-  const scroll = screenH / 2;
-  const features = document.querySelector('.feature-section');
-  const left = document.getElementById('left-card');
-  const middle = document.getElementById('middle-card');
-  const right = document.getElementById('right-card');
-  document.addEventListener('scroll', () => {
-    if (window.scrollY <= offset) {
-      features.style.opacity = "0"
-      features.style.marginTop = "-300px";
-    } else if (window.scrollY > offset && window.scrollY <= offset + scroll) {
-      features.style.opacity = ((window.scrollY - offset) / scroll).toString();
-      features.style.marginTop = "-" + (300 - ((window.scrollY - offset) / scroll) * 100).toString() + "px";
-    } else {
-      features.style.opacity = "1";
-      features.style.marginTop = "-200px";
+  function translateFromOffset(start, end, offset) {
+    return start + (end - start) * offset;
+  }
+  document.addEventListener('DOMContentLoaded', () => {
+    function setProperties() {
+      let width;
+
+      if (window.innerWidth < 512) {
+        offset = ((screenH) / screenW) +20;
+        scroll = screenH / 5;
+        left.style.top = "30vh";
+        right.style.top = "55vh";
+        width = "80%";
+        end = 10;
+
+        rotation = 0;
+
+        spacer.style.height = "0vh";
+        features.style.height = "200vh";
+        cards.style.height = "70vh";
+        experience.style.height = "120vh";
+
+        screens.style.top = "10vh";
+        logo.style.cssText = "top: -25%; scale: 1";
+      } else if (window.innerWidth < 768) {
+        offset = ((screenH) / screenW) + 20;
+        scroll = screenH / 2;
+        left.style.top = "30vh";
+        right.style.top = "55vh";
+        width = "60%";
+        end = 20;
+
+        rotation = 10;
+
+        spacer.style.height = "20vh";
+        features.style.height = "100vh";
+        cards.style.height = "65vh";
+        experience.style.height = "110vh";
+
+        screens.style.top = "30vh";
+        logo.style.cssText = "top: -25%; scale: 0.9";
+      } else if (window.innerWidth < 1024) {
+        offset = (screenH * 100) / screenW;
+        left.style.top = "30vh";
+        right.style.top = "55vh";
+        width = "50%";
+        end = 25;
+
+        rotation = 10;
+
+        spacer.style.height = "30vh";
+        features.style.height = "100vh";
+        cards.style.height = "65vh";
+        experience.style.height = "100vh";
+
+        screens.style.top = "30vh";
+        logo.style.cssText = "top: -25%; scale: 0.8";
+      } else {
+        offset = (screenH * 200) / screenW;
+        left.style.top = "0";
+        right.style.top = "0";
+        width = "25%";
+        end = 18;
+
+        rotation = 10
+
+        spacer.style.height = "80vh";
+        features.style.height = "10vh";
+        cards.style.height = "15vh";
+        experience.style.height = "80vh";
+
+        screens.style.top = "60vh";
+        logo.style.cssText = "top: -25%; scale: 0.7";
+      }
+
+      left.style.width = width;
+      right.style.width = width;
+      middle.style.width = width;
+
+      left.style.left = end + "%";
+      right.style.right = end + "%";
     }
 
+    const screenW = window.innerWidth;
+    const screenH = window.innerHeight;
+    let offset = (screenH * 600) / screenW;
+    let scroll = screenH / 2;
+    const features = document.querySelector('.feature-section');
+    const cards = document.getElementById('cards-section');
+    const logo = document.getElementById('logo');
+    const screens = document.getElementById('screens');
+    const experience = document.getElementById('experience');
+    const left = document.getElementById('left-card');
+    const middle = document.getElementById('middle-card');
+    const right = document.getElementById('right-card');
+    const spacer  = document.getElementById('spacer');
+    let end;
+    let rotation = 10;
 
-    if (window.scrollY <= offset) {
-      left.style.left = "0";
-      left.style.rotate = "-10deg";
-      right.style.right = "0";
-      right.style.rotate = "10deg";
-      middle.style.bottom = "-25%";
-    } else if (window.scrollY > offset && window.scrollY <= (offset + scroll / 2)) {
-      left.style.left = (36 * ((window.scrollY - offset) / scroll)).toString() + "%";
-      left.style.rotate = (-10 * (1 - ((window.scrollY - offset) * 2 / scroll))).toString() + "deg";
-      right.style.right = (36 * ((window.scrollY - offset) / scroll)).toString() + "%";
-      right.style.rotate = (10 * (1 - ((window.scrollY - offset) * 2 / scroll))).toString() + "deg";
-      middle.style.bottom = (-50 * (1 - ((window.scrollY - offset) / scroll))).toString() + "%";
-    } else {
-      left.style.left = "18%";
-      left.style.rotate = "0deg";
-      right.style.right = "18%";
-      right.style.rotate = "0deg";
-      middle.style.bottom = "-25%";
-    }
+    setProperties();
+
+    middle.style.left = window.innerWidth / 2 - middle.offsetWidth / 2 + "px";
+
+    middle.style.top = "0vh";
+
+    document.addEventListener('scroll', () => {
+      if (window.scrollY <= offset) {
+        features.style.opacity = "0";
+      } else if (window.scrollY > offset && window.scrollY <= offset + scroll) {
+        features.style.opacity = ((window.scrollY - offset) / scroll).toString();
+      } else {
+        features.style.opacity = "1";
+      }
+
+
+      if (window.scrollY <= offset) {
+        left.style.left = "0";
+        right.style.right = "0";
+        left.style.rotate = -rotation + "deg";
+        right.style.rotate = rotation + "deg";
+        middle.style.top = "-15vh";
+      } else if (window.scrollY > offset && window.scrollY <= ((offset + scroll))) {
+        let progress = (window.scrollY - offset) / scroll;
+        left.style.left = translateFromOffset(0, end, progress) + "%";
+        left.style.rotate = translateFromOffset(-rotation, 0, progress) + "deg";
+        right.style.right = translateFromOffset(0, end, progress) + "%";
+        right.style.rotate = translateFromOffset(rotation, 0, progress) + "deg";
+        middle.style.top = translateFromOffset(-15, 5, progress) + "vh";
+      } else {
+        left.style.left = end + "%";
+        left.style.rotate = "0deg";
+        right.style.right = end + "%";
+        right.style.rotate = "0deg";
+        middle.style.top = "5vh";
+      }
+    });
+
+    window.addEventListener('resize', () => {
+      console.log(window.innerWidth);
+      middle.style.left = window.innerWidth / 2 - middle.offsetWidth / 2 + "px";
+
+      setProperties();
+    });
   });
 </script>
 
